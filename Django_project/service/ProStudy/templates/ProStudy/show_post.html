@@ -1,0 +1,11 @@
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        {% if post.cat.name|stringformat:"s" == cat_selected|stringformat:"s" %}
+            <div>{{ post.title }}</div>
+            <div class="cointent">{{ post.content }}</div>
+            <div>{{ post_id }}</div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

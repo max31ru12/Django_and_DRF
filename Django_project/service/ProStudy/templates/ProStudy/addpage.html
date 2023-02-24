@@ -1,0 +1,36 @@
+<!--применяем базовый шаблон base_page.html-->
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+<div class="wrapper">
+<!--Атрибут action говорит, к какому url мы должны обратиться для обработки этой формы-->
+<!--когда будем отправлять данные на сервер-->
+<!--Когда передаем логин или пароль, то используем метод post, чтобы со стороны-->
+<!--не было видно данные, которые мы передаем (это чисто для безопасности) или для передачит-->
+<!-- В случае передачи каких-то данных в форме стоит прописывать атрибут enctype="multipart/form-data" -->
+    <form action="{% url 'add_post' %}" method="post" enctype="multipart/form-data">
+<!-- csrf_token служит для защиты от csrf-атак (пишется всегда) -->
+        {% csrf_token %}
+<!-- as_p - это функция (если м ыхоти вызвать ее в этом месте, то мы передваем ссылку на нее, т.е. без скобочек) -->
+<!-- {{ form.as_p }} эта хрень обяхательна, когда мы не прописываем нормальный внешний вид для формы -->
+
+<!-- Сейчас пропишем нормальный внешний вид для формы -->
+<!-- {{ form.title.id_for_label }} - прописываем для тэга label уникальный идентификатор-->
+
+
+    {% for f in form %}
+        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+        <div class="form-errors">{{ f.errors }}</div>
+    {% endfor %}
+
+<!--       Это для заголовка -->
+<!--    <p><label class="form-label" for="{{ form.title.id_for_label }}">{{ form.title.label }}  &lt;!&ndash; Это поле ввода &ndash;&gt;</label>{{ form.title }}</p>-->
+<!--&lt;!&ndash; Располагаем возможные ошибки при вводе заголовка   &ndash;&gt;-->
+<!--        <div class="form-errors">{{ title.errors }}</div>-->
+
+<!--Кнопка, чтобы отправить данные на сервер-->
+        <button type="submit">Добавить</button>
+
+    </form>
+</div>
+{% endblock %}

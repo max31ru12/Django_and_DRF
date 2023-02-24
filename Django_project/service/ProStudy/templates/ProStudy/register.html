@@ -1,0 +1,16 @@
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+    <span style="font-size: 50px;">Страница регистрации</span>
+<!--    У этой формы нет атрибута action    -->
+    <form method="post">
+        {% csrf_token %}
+
+        {% for f in form %}
+        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+
+<!--   стандартный вывод формы - {{ form.as_p }}-->
+    </form>
+{% endblock %}

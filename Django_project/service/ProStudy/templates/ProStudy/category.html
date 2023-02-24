@@ -1,0 +1,11 @@
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        {% if post.id == cat_selected %}
+        <div class="post">
+            {{ post }}
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

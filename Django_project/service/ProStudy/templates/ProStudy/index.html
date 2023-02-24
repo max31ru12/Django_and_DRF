@@ -1,0 +1,33 @@
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+
+<!--    {% for contact in page_obj %}-->
+<!--    <div class="link">{{ contact.title }}</div>-->
+<!--    {% endfor %}-->
+
+<div class="wrapper">
+<!--  Здесь выбираю из коллекции page_obj, в page_obj попадают N записей из модели Women  -->
+    {% for post in page_obj %}
+    <div class="post-info">
+        <a href="{% url 'show_post' post.slug %}">{{ post }}</a>
+    </div>
+    {% endfor %}
+
+    <!-- page_range - дает кол-во пагинаций (на сколько страниц разбиты все объекты из модели Women) -->
+<!-- page_obj имеет метод has_other_pages, который возвращает True, если страниц пагинации больше 1
+   или возвращает False, если есть всего одна страница пагинации-->
+{% if page_obj.has_other_pages %}
+    <ul class="page-numbers">
+        {% for page_number in paginator.page_range %}
+        <li class="number">
+            <a href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</div>
+
+<!-- page_range - дает кол-во пагинаций (на сколько страниц разбиты все объекты из модели Women) -->
+
+{% endblock %}

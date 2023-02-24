@@ -1,0 +1,65 @@
+{% load static %} <!--Подключаем статические внешние файлы-->
+{% load women_tags %} <!--Подключаем тэг из ProStudy/templatetags/women_tags-->
+<!--Подключаю тэг cache (кэширование)-->
+{% load cache %}
+{% get_categories as cats %}
+{% get_posts as posts %}
+
+<html lang="ru">
+
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'ProStudy/css/st.css' %}" />
+    <style>
+        * {
+         margin: 0;
+         padding: 0;
+        }
+    </style>
+</head>
+<!-- тело страницы -->
+<body>
+    <header>
+<!-- Используем кэширование, передаем время кэширования и название самого кэша -->
+        {% cache 60 logo %}
+        <div class="logo" >
+            <span>ProStudy</span>
+        </div>
+        {% endcache %}
+<!-- Выше прописываем конец кэша -->
+        {% block authentification %}
+        <div class="auth">
+            <!-- Если текущий пользователь авторизован -->
+            {% if request.user.is_authenticated %}
+            <span>{{ user.username }}</span> | <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+            <a href="{% url 'register' %}" class="register">Регистрация</a> | <a href="{% url 'login' %}" class="enter">Войти</a>
+            {% endif %}
+        </div>
+        {% endblock %}
+    </header>
+<!--    {% get_categories %} - выведет категории QuerySet [бла бла бла] -->
+<!--    {% get_categories as categories %} &lt;!&ndash; Делаем переменную categories куда помещаем инфу из get_categories &ndash;&gt;-->
+
+    <div class="menu">
+        {% for position in menu %}
+<!--            ниже прописываю имена маршрутов по ссылкам-->
+            <div><a href="{% url position.url_name %}">{{ position.title }}</a></div>
+        {% endfor %}
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+
+
+
+
+
+
+
+
+

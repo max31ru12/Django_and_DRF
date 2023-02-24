@@ -1,0 +1,26 @@
+{% extends 'ProStudy/base_page.html' %}
+
+{% block content %}
+
+    <div class="wrapper">
+            {% for cat in cats %}
+                <div class="asd">
+                        <a href="{% url 'post' cat.slug %}">{{ cat.name }}</a>
+                        {% for post in posts %}
+                        {% if post.id == cat.id %}
+                        <div class="title">{{ post.title }}</div>
+                        <div class="content">{{ post.content }}</div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+
+            {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
