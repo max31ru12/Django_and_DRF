@@ -1,0 +1,110 @@
+
+/* Для компов */
+@media (max-width:1500px){
+    .menu-list {
+        display: flex;
+    }
+
+    .menu-button{
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    /* Убираю чекбокс */
+    .menu [type="checkbox"]{
+        display: none;
+    } 
+
+    /* Убираю иконку меню */
+    .menu label.toggleMenu {
+        display: none;
+    }
+}
+
+/* Для планшетов */
+
+@media (max-width:800px){
+    .menu-list {
+        display: flex;
+    }
+
+    .menu-button{
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    /* Убираю чекбокс */
+    .menu [type="checkbox"]{
+        display: none;
+    } 
+    
+    /* Убираю иконку меню */
+    .menu label.toggleMenu {
+        display: none;
+    }
+}
+
+/* Для телефонов */
+
+@media (max-width:500px){
+    .body {
+        max-width: none;
+    }
+
+    .menu-list {
+        /* ЗДесь прописывааю block для плавной анимации */
+        display: block;
+        overflow: hidden;
+        /* Ниже две строки тоже для анимации */
+        max-height: 0;
+        transition: max-height 0.3;
+    }
+
+    .vertical-line{
+        display: none;
+    }
+
+    .menu-button{
+        font-size: 22px;
+        line-height: 25px;
+        line-height: 10px;
+        height: 20px;
+        width: 100%;
+    }
+
+    /* Убираю чекбокс */
+    .menu [type="checkbox"]{
+        display: none;
+    } 
+    /* Показываю кнопку выпадающего меню */
+    .menu label.toggleMenu {
+        display: block;
+        height: 60%;
+        line-height: 60px;
+    }
+
+    .icon {
+        height: 40px;
+        margin: 10px 0 0 10px;
+    }
+    
+    /* Отслеживаем щедчок по кнопке MENU */
+    input.toggleMenu:checked + label.toggleMenu {
+        color: gold;
+        
+
+    }
+
+    /* отслеживаем щелчок и показываем, к чему оно будет применяться */
+    input.toggleMenu:checked ~ .menu-list {
+        margin: 0;
+        display: block;
+        z-index: 10;
+        height: 220px;
+        /* Две строки ниже все для той же анимации */
+        max-height: 5000px;
+        transition: max-height 2s ease-in;
+        background-color: rgba(143, 155, 82, 0.9);
+    }
+
+}

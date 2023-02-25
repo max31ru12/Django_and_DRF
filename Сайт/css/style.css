@@ -1,0 +1,219 @@
+/* Левая линия - 10vw */
+
+html {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: lightblue; */
+    /* background-color: rgb(255, 182, 193, 0.8); */
+    background-color: #CCE6FF;
+    /* Плавный скролл */
+    scroll-behavior: smooth;
+}   
+
+.empty {
+    height: 10vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* min-height нужно, чтобы элемент не пропадал при вставке кучи инфы на страницу */
+    height: 300vh;
+    max-width: 1500px;
+    
+
+}
+
+/* Начинается ХЭДЕР */
+
+header {
+    /* min-height нужно, чтобы элемент не пропадал при вставке кучи инфы на страницу */
+    min-height: 10vh;
+    flex-direction: column;
+    display: flex;
+    
+    /* background-color:  white; */
+
+    
+}
+
+.phone-numbers {
+    flex-grow: 1;
+}
+
+
+/* МЕНЮШКА */
+.menu {
+    height: 60px;
+    background-color:  rgb(26, 54, 95);
+    flex-grow: 0; 
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 6px 0 black;
+    z-index: 10;
+}
+
+.menu-list {  
+    margin: 0vh 3vw;
+    height: 100%;
+    
+}
+
+.menu-button {
+    list-style: none;
+    padding: 2.5vh 1.5vw 0vh 1.5vw; /* Эту штуку надо адаптироать */
+    text-align: center;
+    width: 15vw;
+    min-width: 50px;
+    /* Ставлю шрифт менюшке */
+    font-family: Tahoma, sans-serif;
+    color: #ffffff;
+}
+
+.menu-button > a {
+    /* Убираю нижнее подчеркивание ссылки */
+    text-decoration: none;
+    
+}
+
+.menu-button > a:visited {
+    /* Убираю нижнее подчеркивание ссылки */
+    color: #fff;
+    
+}
+
+.vertical-line {
+    border-left: 1px solid lightgrey;
+    max-height: 80%;
+    margin: 10px 0px;
+}
+
+
+
+/* тут начинается главная инфомация МЭИН */
+
+main {
+    flex-grow: 1;
+    /* background-color: lightGray; */
+    min-height: 140vh;
+}
+
+/* Информационные блоки */
+
+/* .test {
+    margin: 10vh 30vw 0vh 0vh;
+    height: 40vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+} */
+
+/* О нас */
+
+.about { 
+    margin: 0vh 30vw 0vh 0vh;
+    width: 80vw;
+    min-width: 300px;
+}
+
+.infblock {
+    /* font-size: 30px; мешает медиа запросу*/ 
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    /* Это тени */
+    box-shadow: 0 0 5px 2px rgb(110, 110, 177);
+    
+}
+
+/* Сслыки на страницу */
+.bottom-link {
+    padding-left: 4vw;
+    flex-grow: 0.5;
+}
+
+.about > .left-side {
+    width: 10%;
+    /* background-color:  rgb(101, 152, 195); */
+    background-color:  rgb(126, 172, 209);
+}
+
+.about > .right-side {
+    width: 90%;
+    background-color: rgb(154, 197, 232);
+    display: flex;
+    flex-direction: column;
+}
+
+.info-title {
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    padding-left: 4vw;
+    flex-grow: 1;
+
+}
+
+.info-content {
+    padding: 0 4vw 0 4vw;
+    font-family: Tahoma, sans-serif;
+    flex-grow: 3;
+}
+
+.about-media-block {
+    margin: 5vh 0vw 0vh 8vw;
+    border: solid 1px black;
+    background-color: #fff;
+    display: flex;
+    /* Перенос лишних блоков на следующую линию */
+    flex-wrap: wrap;
+}
+
+
+
+
+/* Блок пациентов */
+.patient {
+    margin: 0vh 0vh 0vh 30vw;
+    /* position: relative;
+    right: 0; */
+}
+
+.patient > .left-side {
+    width: 90%;
+    background-color:  rgb(126, 172, 209);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.patient > .right-side {
+    width: 10%;
+    background-color:  rgb(100, 149, 189);
+}
+
+/* Блок для докторов */
+
+
+.doctor { 
+    margin: 0vh 30vw 0vh 0vh;
+}
+
+.doctor > .left-side {
+    width: 10%;
+    background-color: rgb(63, 103, 135);
+}
+
+.doctor > .right-side {
+    width: 90%;
+    background-color:  rgb(100, 149, 189);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Конец информационных блоков */
+
+footer {
+    flex-grow: 0;
+    min-height: 100px;
+    background-color:bisque;
+}

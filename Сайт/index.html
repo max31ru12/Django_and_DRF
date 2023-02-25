@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Этот метатег позволяет задать ширину -->
+    <meta name="viewport" content="width=device-width">
+    <title>Медицинский сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <script src="slider.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>    
+        <a name="MENU"></a>   
+        <div class="header-container">
+            <!-- <div class="buttons">
+                <div class="button">
+                    <span>Я ВРАЧ</span>
+                </div>
+                <div class="button">
+                    <span>Я ПАЦИЕНТ</span>
+                </div>
+            </div> -->
+
+        </div>
+    </header>
+
+    <nav class="menu">
+
+        <input type="checkbox" name="toggle" id="menu" class="toggleMenu" onkeyup="this.value = this.value.replace(/[^\d]/g,'');">
+        <!-- label булет отслеживать щелчок по input с id = "menu" -->
+        <label for="menu" class="toggleMenu"><img src="icons/navigation-menu-3.png" class="icon toggleMenu"></label>
+
+        <ul class="menu-list">
+            <li class="menu-button"><a href="#MENU">Главная</a></li>
+                <div class="vertical-line"></div>
+            <li class="menu-button"><a href="#ABOUT">О нас</a></li>
+                <div class="vertical-line"></div>
+            <li class="menu-button"><a href="#PATIENT">Пациентам</a></li>
+                <div class="vertical-line"></div>
+            <li class="menu-button"><a href="#DOCTOR">Врачам</a></li>
+                <div class="vertical-line"></div>
+            <li class="menu-button"><a href="">Литература</a></li>
+        </ul>    
+</nav>
+
+    <main>
+        <div class="empty"><a name="ABOUT"></a></div>
+        <div class="about infblock">
+            <div class="left-side"></div>
+            <div class="right-side">
+                <div class="info-title">Взгляд морфолога</div>
+                <div class="info-content">Это текст про Медицинский сайт, который называется "Взгляд морфолога"</div>
+                <div class="bottom-link"><a href="patient_page.html">Перейти...</a></div>
+            </div>
+        </div>
+
+
+
+        <div class="about-media-block">
+            <div class="amb fi"></div>
+            <div class="amb text"></div>
+            <div class="amb si"></div>
+        </div>
+
+
+
+
+        <div class="empty"><a name="PATIENT"></a></div>
+        <div class="patient infblock">
+            
+            <div class="left-side">
+                <div class="info-title">Пациентам</div>
+                <div class="info-content">Это блок для пациентов, здесь информация для пациентов, а также ссылка на часть сайта, 
+                    предназначенную для пациентов</div>
+                    <div class="bottom-link"><a href="patient_page.html">Перейти...</a></div>
+            </div>
+            <div class="right-side"></div>
+        </div>
+
+
+
+        <div class="empty"><a name="DOCTOR"></a></div>
+        <div class="doctor infblock">
+            <div class="left-side"></div>
+            <div class="right-side">
+                <div class="info-title">Врачам</div>
+                <div class="info-content">Это блок для врачей, здесь информация для врачей, а также ссылка на часть сайта, 
+                    предназначенную для врачей
+                </div>
+                <div class="bottom-link"><a href="patient_page.html">Перейти...</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="phone-numbers">
+            <span>Контактная информация:
+                <br>89991234321
+                <br>почта@mail.ru
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

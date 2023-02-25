@@ -1,0 +1,17 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    background-color: #e1b9b9;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.left-menu {
+    width: 200px;
+    height: 100%;
+    border: 2px solid black;
+    background-color: #9e6e6e;
+}

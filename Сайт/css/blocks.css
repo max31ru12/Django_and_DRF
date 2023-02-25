@@ -1,0 +1,77 @@
+
+/* Для компов */
+@media (max-width:1500px){
+    .body {
+        max-width: 1200px;
+    }
+    .infblock {
+        font-size: 30px;
+        height: 40vh;
+    }
+    /* Название блока */
+    .info-title {
+        line-height: 60px;
+    }
+    /* Текст блока */
+    .info-content {
+        font-size: 20px;
+    }
+    /* Медиа */
+    .about-media-block {
+        min-width: 270px;
+        width: 72vw;
+        height: 200px;
+    }
+
+}
+
+/* Для планшетов */
+
+@media (max-width:600px){
+
+    .infblock {
+        font-size: 20px;
+        height: 20vh;
+    }
+    /* Название блока */
+    .info-title {
+        line-height: 40px;
+        font-size: 30px;
+    }
+    /* Текст блока */
+    .info-content {
+        font-size: 20px;
+    }
+    .about-media-block {
+        min-width: 270px;
+        width: 72vw;
+        height: 20vh;
+    }
+
+
+}
+
+/* Для телефонов */
+
+@media (max-width:500px){
+
+    .infblock {
+        font-size: 20px;
+        height: 25vh;
+    }
+    /* Название блока */
+    .info-title {
+        line-height: 40px;
+        font-size: 28px;
+    }
+    /* Текст блока */
+    .info-content {
+        font-size: 15px;
+    }
+    .about-media-block {
+        min-width: 270px;
+        width: 72vw;
+        height: 20vh;
+    }
+
+}
